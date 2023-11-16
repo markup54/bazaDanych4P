@@ -43,6 +43,7 @@ public class MainActivity extends AppCompatActivity {
         slowaDatabase = Room.databaseBuilder(getApplicationContext(),
                 SlowaDatabase.class,
                 "SlowaDB").addCallback(mojCallback)
+                .allowMainThreadQueries()
                 .build();
 
 
@@ -66,8 +67,13 @@ public class MainActivity extends AppCompatActivity {
                     @Override
                     public void run() {
                         //w trakcie
+                        /*slowaDatabase.getSlowaDAO().dodajSlowo(new Slowo("informatyk"));
+                        slowaDatabase.getSlowaDAO().dodajSlowo(new Slowo("elektronik"));
+                        slowaDatabase.getSlowaDAO().dodajSlowo(new Slowo("matematyka"));
+                        slowaDatabase.getSlowaDAO().dodajSlowo(new Slowo("matura"));
+                        slowaDatabase.getSlowaDAO().dodajSlowo(new Slowo("egzamin"));
+                                                                         */
                         slowaDatabase.getSlowaDAO().dodajSlowo(slowo);
-
                         //po zrobieniu
                         handler.post(new Runnable() {
                             @Override

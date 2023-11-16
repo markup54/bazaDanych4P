@@ -17,6 +17,9 @@ public interface SlowoDAO {
     @Delete
     public void usunSlowo(Slowo slowo);
 
+    @Query("Delete from slowa")
+    public void usunWszystko();
+
     @Update
     public void aktualizujSlowo(Slowo slowo);
 
