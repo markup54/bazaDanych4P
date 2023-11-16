@@ -28,8 +28,16 @@ public class Slowo {
         return nazwa;
     }
 
+    public int getIdSlowa() {
+        return idSlowa;
+    }
+
     public void setNazwa(String nazwa) {
         this.nazwa = nazwa;
+    }
+
+    public void setIdSlowa(int idSlowa) {
+        this.idSlowa = idSlowa;
     }
 
     @Override
